@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mortgage Calculator</title>
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Mortgage Calculator</h1>
+    
+    <div class="calculator">
+      <div class="input-group">
+        <label for="loanAmount">
+          Loan Amount
+          <span class="tooltip" data-tooltip="Enter the total amount you wish to borrow">?</span>
+        </label>
+        <input type="number" id="loanAmount" min="0" step="1000" required>
+      </div>
+
+      <div class="input-group">
+        <label for="interestRate">
+          Annual Interest Rate (%)
+          <span class="tooltip" data-tooltip="Enter the annual interest rate">?</span>
+        </label>
+        <input type="number" id="interestRate" min="0" max="100" step="0.01" required>
+      </div>
+
+      <div class="input-group">
+        <label for="loanTerm">
+          Loan Term (Years)
+          <span class="tooltip" data-tooltip="Enter the length of the loan in years">?</span>
+        </label>
+        <input type="number" id="loanTerm" min="1" max="50" required>
+      </div>
+
+      <button id="calculateBtn">Calculate</button>
+
+      <div id="results" class="hidden">
+        <h2>Results</h2>
+        <div class="result-item">
+          <span>Monthly Payment:</span>
+          <span id="monthlyPayment"></span>
+        </div>
+        <div class="result-item">
+          <span>Total Payment:</span>
+          <span id="totalPayment"></span>
+        </div>
+        <div class="result-item">
+          <span>Total Interest:</span>
+          <span id="totalInterest"></span>
+        </div>
+      </div>
+
+      <div id="chartContainer" class="hidden">
+        <canvas id="paymentChart"></canvas>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
